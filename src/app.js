@@ -169,5 +169,5 @@ app.post('/login', (req, res) => {
 	});
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000 || || process.env.MONGODB_URI);
 console.log('Server started');
