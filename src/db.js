@@ -44,4 +44,4 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 	 // if we're not in PRODUCTION mode, then use
 	 dbconf = 'mongodb://localhost/dv758';
 }
-mongoose.connect(dbconf);
+mongoose.connect('mongodb://heroku_txkw7x5h:3o4pt0ld1jco4egmndj4h2msgs@ds263639.mlab.com:63639/heroku_txkw7x5h');
