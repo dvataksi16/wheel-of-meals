@@ -1,0 +1,175 @@
+    <!-- Uses Materialize research topic -->
+{{#if user}}
+<script src ="../js/chooseMovie.js" type="text/javascript"></script>
+<script src = "../js/map.js" text="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2MYjnrWq4ZPScFaLurN5akcs6O1QCTlE&libraries=places&callback=initMap"async defer></script>
+
+<br>
+
+<div class = "container center">
+  <div class = "row">
+    <a href ="/mine" class = "btn-large waves-effect black lighten-2" id = "saved"> Saved Movies </a>
+    <button type="submit" class = "btn-large waves-effect black lighten-2" id ="choose"> Choose Movie </button>
+    <button type="submit" class="button btn-large waves-effect black lighten-2" id="find">Nearby Theaters</button>
+  </div>
+</div>
+
+<!-- MAP  -->
+<div id="map" class ="hidden"></div>
+
+<!-- FILTER FORM -->
+<form method="POST" action="/decision">
+  <div id="filter" class="hidden">
+    <div class ="column">
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Action" />
+            <span class = "Off">Action</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Adventure" />
+            <span class = "Off">Adventure</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Animation" />
+            <span class = "Off">Animation</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Biography" />
+            <span class = "Off">Biography</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Comedy" />
+            <span class = "Off">Comedy</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Crime" />
+            <span class = "Off">Crime</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Documentary" />
+            <span class = "Off">Documentary</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Drama" />
+            <span class = "Off">Drama</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Family" />
+            <span class = "Off">Family</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Fantasy" />
+            <span class = "Off">Fantasy</span>
+          </label><br>
+        </div>
+        <div class = "column">
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Game-Show" />
+            <span class = "Off">Game-Show</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="History" />
+            <span class = "Off">History</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Horror" />
+            <span class = "Off">Horror</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Music" />
+            <span class = "Off">Music</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Musical" />
+            <span class = "Off">Musical</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Mystery" />
+            <span class = "Off">Mystery</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Romance" />
+            <span class = "Off">Romance</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Sci-Fi" />
+            <span class = "Off">Sci-Fi</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Thriller" />
+            <span class = "Off">Thriller</span>
+          </label><br>
+          <label class = "genres-to-pick">
+            <input type="checkbox" class="filled-in" name="genre" value="Western" />
+            <span class = "Off">Western</span>
+          </label><br>
+        </div>
+      </div>
+      <div class ="center">
+        <button type="submit" class="btn-large waves-effect black lighten-2 hidden" id = "decide">Spin Wheel</a>
+        </div>
+      </form>
+
+
+  {{else}}
+    <body>
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot top-space">
+          <div class="container">
+            <div class="row center">
+                <div class="col s12">
+                    <span class="light white-text"><h4></h4></span>
+                    <a href="register" class="btn-large waves-effect black lighten-2">Register</a>
+                    <a href="login" class="btn-large waves-effect black lighten-2">Login</a>
+                </div>
+            </div>
+            <br><br>
+
+          </div>
+        </div>
+        <div class="parallax"><img src="/img/wheel1.jpg" alt=""></div>
+      </div>
+
+
+      <div class="container black">
+        <div class="section">
+          <!--   Icon Section using materialize icons, this feature was successful  -->
+          <div class="row center icon-info">
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center white-text"><i class="material-icons">flash_on</i></h2>
+                <h5 class="center white-text">Convenient</h5>
+              </div>
+            </div>
+
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center white-text"><i class="material-icons">account_circle</i></h2>
+                <h5 class="center white-text">Life Changing</h5>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <div class="row center">
+            </div>
+          </div>
+        </div>
+        <div class="parallax"><img src="/img/wheel2.jpg" alt=""></div>
+      </div>
+
+
+      <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
+
+    </body>
+    {{/if}}

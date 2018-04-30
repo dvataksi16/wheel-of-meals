@@ -1,0 +1,36 @@
+<br>
+<h1 class = "center">Register for an account</h1>
+<br>
+
+{{#if message}}
+  <h3>{{message}}</h3>
+{{/if}}
+
+<div class="row center">
+    <form class="col s12" method="POST" action="/register">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Dwight" id="first_name" name ="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Shrute" id="last_name" name ="last_name" type="text" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Email" id="email" name = "email" type="email" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="username" id="username" name="username" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="password" id="password" name="password" type="password" class="validate">
+        </div>
+      </div>
+      <input class="btn-large waves-effect black lighten-2" type="submit">
+    </form>
+  </div>

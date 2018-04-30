@@ -1,0 +1,22 @@
+<h1> Hello there </h1>
+
+<h3> My Fav Movies </h3>
+
+	<br>
+	<ul>
+		{{#each movies}}
+		<li> {{title}} </li>
+	</ul>
+{{/each}}
+<form method ="POST" action ="/mine"/>
+
+<br>
+<br>
+<h1> Add a movie!</h1>
+<form method = "POST" action = "/mine">
+	Movie: <input type = "text" name = "title">
+	Genre: <input type = "text" name = "genre">
+	Director: <input type = "text" name = "director">
+	Year: <input type = "text" name = "year">
+	<input type = "submit" value = "Add!">
+</form>

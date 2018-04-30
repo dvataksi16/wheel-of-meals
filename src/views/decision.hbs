@@ -1,0 +1,54 @@
+<!-- After favoriting user can spin again but genre filters are not retained -->
+{{#if refresh}}
+<br>
+<div class = "center">
+  <div class = "box">
+    <h4><strong>{{movie.title}}</strong></h4>
+  <hr>
+    <h5> Directed by {{movie.director}}, Year: {{movie.year}}, Genre: {{movie.genre}} </h5>
+  </div>
+  <br>
+  <div class = "container row center">
+    {{#if movie.favorite}}
+    <form method="POST" action="/decision/{{movie._id}}">
+      <button type = "submit" class ="btn-large waves-effect white center favButton favorited"><i class="material-icons red-text">favorite</i></button>
+    </form>
+    {{else}}
+    <form method="POST" action="/decision/{{movie._id}}">
+      <button type = "submit" class ="btn-large waves-effect black lighten-2 center favButton"><i class="material-icons">favorite</i></button>
+    </form>
+    {{/if}}
+    <form method="POST" action="/decision">
+      <button type="submit" class="btn-large waves-effect black lighten-2 center">SPIN AGAIN</button>
+  </form>
+</div>
+  <div id="spinwheel">
+    <img src ="/img/spinwheel.gif"></img>
+  </div>
+</div>
+{{else}}
+  <br>
+  <div class = "center">
+    <div class = "box">
+      <h4><strong>{{movie.title}}</strong></h4>
+    <hr>
+      <h5> Directed by {{movie.director}}, Year: {{movie.year}}, Genre: {{movie.genre}} </h5>
+    </div>
+    <br>
+    <div class = "container row center">
+      {{#if movie.favorite}}
+      <form method="POST" action="/decision/{{movie._id}}">
+        <button type = "submit" class ="btn-large waves-effect white center favButton favorited"><i class="material-icons red-text">favorite</i></button>
+      </form>
+      {{else}}
+      <form method="POST" action="/decision/{{movie._id}}">
+        <button type = "submit" class ="btn-large waves-effect black lighten-2 center favButton"><i class="material-icons">favorite</i></button>
+      </form>
+      {{/if}}
+      <input type="button" value ="Spin Again" onClick="window.location.reload()" class="btn-large waves-effect black lighten-2 center"></input>
+  </div>
+    <div id="spinwheel">
+      <img src ="/img/spinwheel.gif"></img>
+    </div>
+  </div>
+  {{/if}}
