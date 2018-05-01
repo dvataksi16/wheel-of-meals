@@ -44,4 +44,4 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 	 // if we're not in PRODUCTION mode, then use
 	 dbconf = 'mongodb://localhost/dv758';
 }
-mongoose.connect('mongodb://heroku_txkw7x5h:3o4pt0ld1jco4egmndj4h2msgs@ds263639.mlab.com:63639/heroku_txkw7x5h');
+mongoose.connect('mongodb://denisa:denisa@cluster0-shard-00-00-6zr15.mongodb.net:27017,cluster0-shard-00-01-6zr15.mongodb.net:27017,cluster0-shard-00-02-6zr15.mongodb.net:27017/Wheel-of_Meals?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
