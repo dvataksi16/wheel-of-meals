@@ -40,7 +40,6 @@ An Example Movie:
   favorite: true //used to show user favorites on mine page
 }
 ```
-(note to graders: I changed my idea from meals to movies, which is why the wireframes are about food, I'd like to change that one day to coincide with movies)
 
 ## [Link to Commented First Draft Schema](src/db.js)
 
